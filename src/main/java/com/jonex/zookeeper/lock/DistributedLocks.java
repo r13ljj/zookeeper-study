@@ -6,7 +6,7 @@ package com.jonex.zookeeper.lock;
  */
 public interface DistributedLocks {
 
-    public final static String ZK_ROOT_LOCK = "/distributed_locks";
+    public final static String ZK_LOCK_ROOT = "/distributed_locks";
 
     /**
      * 独占锁
@@ -15,7 +15,9 @@ public interface DistributedLocks {
      */
     boolean getExclusiveLock();
 
-    boolean getExclusiveLock(int waitTime);
+    boolean getExclusiveLock(long waitTime);
+
+    void releaseExclusiveLock();
 
     /**
      * 共享锁
@@ -24,6 +26,6 @@ public interface DistributedLocks {
      */
     boolean getSharedLock();
 
-    boolean getSharedLock(int waitTime);
+    boolean getSharedLock(long waitTime);
 
 }
