@@ -3,6 +3,9 @@ package com.jonex.zookeeper.configcenter;
 import com.jonex.zookeeper.ZookeeperManager;
 import org.I0Itec.zkclient.IZkChildListener;
 import org.I0Itec.zkclient.IZkDataListener;
+import org.apache.zookeeper.KeeperException;
+import org.apache.zookeeper.WatchedEvent;
+import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,12 +33,33 @@ public class ConfigCenterWatcher {
         configCenterListener = new ConfigCenterListener();
     }
 
-    public void watcher(){
+    public void watcher(String key){
         ZooKeeper zk = ZookeeperManager.instance().getZkClient();
-
+        try {
+            zk.getData(ConfigCenter.CONFIG_CENTER_ZK_ROOT+"/"+key, new ConfigDataWatcher(), null);
+            zk.getChildren(ConfigCenter.CONFIG_CENTER_ZK_ROOT+"/"+key, new ConfigChildrenWatch(), null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    private class ConfigCenterListener implements IZkDataListener, IZkChildListener {
+
+    class ConfigDataWatcher implements Watcher {
+        public void process(WatchedEvent watchedEvent) {
+            configCenter.init();
+        }
+    }
+
+    class ConfigChildrenWatch implements Watcher {
+        public void process(WatchedEvent watchedEvent) {
+            configCenter.init();
+        }
+    }
+
+    /**
+     * NOOP
+     */
+    class ConfigCenterListener implements IZkDataListener, IZkChildListener {
 
         public void handleChildChange(String path, List<String> children) throws Exception {
             LOG.info("config {} child change,start reload configProperties", path);

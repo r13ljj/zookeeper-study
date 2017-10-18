@@ -1,5 +1,7 @@
 package com.jonex.zookeeper.configcenter;
 
+import java.util.Map;
+
 /**
  * @Author jonex [r13ljj@gmail.com]
  * @Date 2017/10/16 17:36
@@ -14,10 +16,10 @@ public interface ConfigCenter {
 
     void updateConfig(String key, String config);
 
-    void delConfig();
+    void delConfig(String key);
 
-    void getConfig(String key);
+    String getConfig(String key);
 
-    void getAllConfig();
+    Map<String, String> getAllConfig();
 
 }
