@@ -1,7 +1,7 @@
-package com.jonex.zookeeper.queue;
+package com.jonex.zookeeper.zkclient.queue;
 
-import com.jonex.zookeeper.TestMainClient;
-import com.jonex.zookeeper.TestMainServer;
+import com.jonex.zookeeper.zkclient.TestMainClient;
+import com.jonex.zookeeper.zkclient.TestMainServer;
 import org.apache.log4j.Logger;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;

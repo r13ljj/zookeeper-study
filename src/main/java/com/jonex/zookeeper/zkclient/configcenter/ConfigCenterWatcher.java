@@ -1,9 +1,8 @@
-package com.jonex.zookeeper.configcenter;
+package com.jonex.zookeeper.zkclient.configcenter;
 
-import com.jonex.zookeeper.ZookeeperManager;
+import com.jonex.zookeeper.zkclient.ZookeeperManager;
 import org.I0Itec.zkclient.IZkChildListener;
 import org.I0Itec.zkclient.IZkDataListener;
-import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;

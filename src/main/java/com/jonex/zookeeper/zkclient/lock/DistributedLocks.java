@@ -1,4 +1,4 @@
-package com.jonex.zookeeper.lock;
+package com.jonex.zookeeper.zkclient.lock;
 
 /**
  * @Author jonex [r13ljj@gmail.com]

@@ -1,4 +1,4 @@
-package com.jonex.zookeeper.configcenter;
+package com.jonex.zookeeper.zkclient.configcenter;
 
 import java.util.Map;
 

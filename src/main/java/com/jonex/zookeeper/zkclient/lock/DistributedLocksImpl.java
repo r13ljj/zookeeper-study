@@ -1,11 +1,10 @@
-package com.jonex.zookeeper.lock;
+package com.jonex.zookeeper.zkclient.lock;
 
-import com.jonex.zookeeper.ZookeeperManager;
+import com.jonex.zookeeper.zkclient.ZookeeperManager;
 import org.apache.zookeeper.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

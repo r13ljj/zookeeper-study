@@ -1,4 +1,4 @@
-package com.jonex.zookeeper;
+package com.jonex.zookeeper.zkclient;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.zookeeper.server.ZooKeeperServerMain;

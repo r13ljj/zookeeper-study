@@ -1,4 +1,4 @@
-package com.jonex.zookeeper;
+package com.jonex.zookeeper.zkclient;
 
 import org.apache.log4j.xml.DOMConfigurator;
 import org.apache.zookeeper.WatchedEvent;

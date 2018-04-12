@@ -1,4 +1,4 @@
-package com.jonex.zookeeper.watch;
+package com.jonex.zookeeper.zkclient.watch;
 
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;

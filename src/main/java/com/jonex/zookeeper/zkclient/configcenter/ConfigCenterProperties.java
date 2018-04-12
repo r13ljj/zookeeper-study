@@ -1,8 +1,7 @@
-package com.jonex.zookeeper.configcenter;
+package com.jonex.zookeeper.zkclient.configcenter;
 
-import com.jonex.zookeeper.ZookeeperManager;
+import com.jonex.zookeeper.zkclient.ZookeeperManager;
 import org.apache.zookeeper.CreateMode;
-import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.ZooKeeper;
 import org.slf4j.Logger;
