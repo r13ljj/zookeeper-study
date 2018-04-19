@@ -37,9 +37,17 @@ public class WatchOperation {
         nodeCache.getListenable().addListener(nodeCacheListener);
     }
 
+    public void clearNodeWatch(){
+        // TODO
+    }
+
     public void treeWatch(String path, TreeCacheListener treeCacheListener){
         TreeCache treeCache = new TreeCache(ZkClient.getClient(), path);
         treeCache.getListenable().addListener(treeCacheListener);
+    }
+
+    public void clearTreeWatch(){
+        // TODO
     }
 
 
