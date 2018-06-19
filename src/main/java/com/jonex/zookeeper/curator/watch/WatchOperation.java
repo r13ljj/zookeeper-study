@@ -35,6 +35,7 @@ public class WatchOperation {
     public void nodeWatch(String path, boolean dataIsCompressed, NodeCacheListener nodeCacheListener)throws Exception{
         NodeCache nodeCache = new NodeCache(ZkClient.getClient(), path, dataIsCompressed);
         nodeCache.getListenable().addListener(nodeCacheListener);
+        nodeCache.getCurrentData().getPath();
     }
 
     public void clearNodeWatch(){
